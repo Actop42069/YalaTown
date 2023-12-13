@@ -8,9 +8,10 @@ radius = 8.0
 [node name="Bush" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, -8)
 texture = ExtResource("1_3eyub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 4)
+position = Vector2(0, -4)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cqe2y")

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsr4qg2kmc777" path="res://Player/player.tscn" id="2_ymjpc"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_ymjpc")]
 position = Vector2(104, 48)
@@ -13,3 +14,9 @@ position = Vector2(40, 32)
 
 [node name="Bush2" parent="." instance=ExtResource("2_yeyhg")]
 position = Vector2(64, 72)
+
+[node name="Bush3" parent="." instance=ExtResource("2_yeyhg")]
+position = Vector2(160, 64)
+
+[node name="Bush4" parent="." instance=ExtResource("2_yeyhg")]
+position = Vector2(168, 24)
