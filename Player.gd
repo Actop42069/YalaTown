@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-const FRICTION = 25
-const ACCELRATION = 20
-const MAX_SPEED = 80
+const FRICTION = 300
+const ACCELRATION = 350
+const MAX_SPEED = 100
+
+func _ready():
+	motion_mode = MOTION_MODE_FLOATING
 
 var vel = Vector2.ZERO
 
@@ -13,10 +16,11 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		vel += input_vector * ACCELRATION * delta
-		vel = vel.limit_length(MAX_SPEED * delta)
+		vel = vel.move_toward(input_vector * MAX_SPEED, ACCELRATION * delta)
 	else:
 		vel = vel.move_toward(Vector2.ZERO, FRICTION * delta)
-		
+		move_and_slide()
+	move_and_collide(vel * delta)
 	
-	move_and_collide(vel)
+	
+	
